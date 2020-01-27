@@ -8,13 +8,13 @@ const { check, validationResult } = require("express-validator");
 router.post(
   "/",
   [
-    check("name", "name is required")
+    check("name", "Name is required")
       .not()
       .isEmpty(),
-    check("email", "please include a valid email").isEmail(),
+    check("email", "Please include a valid email").isEmail(),
     check(
       "password",
-      "please enter a password with 6 or more characters"
+      "Please enter a password with 6 or more characters"
     ).isLength({ min: 6 })
   ],
   (req, res) => {
