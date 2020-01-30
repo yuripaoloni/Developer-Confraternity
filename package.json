@@ -1,5 +1,5 @@
 {
-  "name": "Developer Confraternity",
+  "name": "dev-social-app",
   "version": "1.0.0",
   "description": "Social network for developers",
   "main": "server.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MatteoLeonesi/Social-App.git"
+    "url": "git+https://github.com/MatteoLeonesi/Developer-Confraternity.git"
   },
   "author": "Matteo Leonesi & Yuri Paoloni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MatteoLeonesi/Social-App/issues"
+    "url": "https://github.com/MatteoLeonesi/Developer-Confraternity/issues"
   },
-  "homepage": "https://github.com/MatteoLeonesi/Social-App#readme",
+  "homepage": "https://github.com/MatteoLeonesi/Developer-Confraternity#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.2.5",
