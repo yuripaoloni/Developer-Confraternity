@@ -1,4 +1,4 @@
-# Dev-Social-App
+# Developer Confraternity
 
 ## Get started
 
