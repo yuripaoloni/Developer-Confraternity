@@ -17,6 +17,7 @@ router.get("/me", auth, async (req, res) => {
       user: req.user.id
     }).populate("user", ["name", "avatar"]);
 
+    // no profile found
     if (!profile) {
       return res.status(400).json({ msg: "There is no profile for this user" });
     }
@@ -89,13 +90,13 @@ router.post(
     try {
       let profile = await Profile.findOne({ user: req.user.id });
 
-      //a profile already exists
+      // a profile already exists
       if (profile) {
         // Update
         profile = await Profile.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: profileFields },
-          { new: true }
+          { user: req.user.id }, // the filter
+          { $set: profileFields }, // the update
+          { new: true } // new: true return the document after the update
         );
 
         return res.json(profile);
@@ -152,7 +153,7 @@ router.get("/users/:user_id", async (req, res) => {
 // @access  Private
 router.delete("/", auth, async (req, res) => {
   try {
-    // @todo - remove users posts
+    // TODO - remove users posts
 
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
