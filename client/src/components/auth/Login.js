@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  // use the function setFormData to change the value of formData
   const [formData, setFormData] = useState({
     email: "",
     password: ""
