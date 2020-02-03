@@ -7,6 +7,7 @@ const initialState = {};
 
 const middleware = [thunk];
 
+// Creates a Redux store that holds the complete state tree the app
 const store = createStore(
   rootReducer,
   initialState,
