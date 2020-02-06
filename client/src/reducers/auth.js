@@ -12,8 +12,7 @@ import { STATES } from "mongoose";
 const initialState = {
   token: localStorage.getItem("token"),
   isAuthenticated: null,
-  // to check that we already load user from db
-  loading: true,
+  loading: true, // To check that we already load user from db
   user: null
 };
 

@@ -14,14 +14,16 @@ import setAuthToken from "./utils/setAuthToken";
 
 import "./App.css";
 
+// Set global header
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
 const App = () => {
+  // useEffect tells React that the component needs to do something after render
   useEffect(() => {
     store.dispatch(loadUser());
-  }, []);
+  }, []); //the [] tells React that the effect doesn’t depend on any values from props or state
   return (
     // Provider makes the Redux store available to any nested components that have been wrapped in the connect() function.
     <Provider store={store}>
