@@ -22,7 +22,7 @@ export const getCurrentProfile = () => async dispatch => {
 // Create or update profile
 export const createProfile = (
   formData,
-  history,
+  history, //allows to manage and handle the browser history inside views or components
   edit = false
 ) => async dispatch => {
   try {
@@ -40,7 +40,7 @@ export const createProfile = (
     dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
 
     if (!edit) {
-      history.push("/dashboard");
+      history.push("/dashboard"); // pushes a new entry onto the history stack
     }
   } catch (err) {
     const errors = err.response.data.errors;

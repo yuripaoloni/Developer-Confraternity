@@ -14,6 +14,7 @@ const Dashboard = ({
     getCurrentProfile();
   }, []);
 
+  // on loading show the loading animation
   return loading && profile === null ? (
     <Spinner />
   ) : (

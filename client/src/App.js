@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
@@ -27,6 +28,7 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []); //the [] tells React that the effect doesn’t depend on any values from props or state
+
   return (
     // Provider makes the Redux store available to any nested components that have been wrapped in the connect() function.
     <Provider store={store}>

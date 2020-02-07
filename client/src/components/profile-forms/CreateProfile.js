@@ -8,7 +8,7 @@ const CreateProfile = ({
   createProfile,
   getCurrentProfile,
   profile: { profile, loading },
-  history
+  history //allows to manage and handle the browser history inside views or components
 }) => {
   const [formData, setFormData] = useState({
     company: "",
@@ -24,7 +24,10 @@ const CreateProfile = ({
     youtube: "",
     instagram: ""
   });
+
+  // useState set displaySocialInputs to false
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
   const {
     company,
     website,
@@ -39,16 +42,22 @@ const CreateProfile = ({
     youtube,
     instagram
   } = formData;
+
+  // change the value of the variable named "e.target.name" with "e.target.value"
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  // create a new profile on submit
   const onSubmit = e => {
     e.preventDefault();
     createProfile(formData, history);
   };
+
   useEffect(() => {
     getCurrentProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCurrentProfile]);
+
+  // if has a profile, redirect to dashboard
   return loading && profile === null ? (
     <Redirect to="/dashboard" />
   ) : (
@@ -234,5 +243,5 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(CreateProfile)
+  withRouter(CreateProfile) //withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
 );

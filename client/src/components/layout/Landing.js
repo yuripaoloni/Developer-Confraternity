@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 const Landing = ({ isAuthenticated }) => {
+  //if user is authenticated, redirect to the dashboard without seeing the landing page
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }

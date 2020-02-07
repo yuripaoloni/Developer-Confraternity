@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-// if user is not authenticated and loaded we redirect him to login, otherwise we display the selected routes
+// if user is not authenticated and not loaded we redirect him to login, otherwise we display the selected routes
 const PrivateRoute = ({
   component: Component,
   auth: { isAuthenticated, loading },
