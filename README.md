@@ -19,7 +19,7 @@ TBA
 ## Autori
 
 - **Yuri Paoloni** - [yuripaoloni](https://github.com/yuripaoloni)
-- **Matteo Leonesi** - [matteoleonesi](https://github.com/MatteoLeonesi)
+- **Matteo Leonesi** - [MatteoLeonesi](https://github.com/MatteoLeonesi)
 
 ## Licenza
 
