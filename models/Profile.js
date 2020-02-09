@@ -6,7 +6,7 @@ const ProfileSchema = new mongoose.Schema({
     ref: "user"
   },
   company: {
-    type: String  
+    type: String
   },
   website: {
     type: String

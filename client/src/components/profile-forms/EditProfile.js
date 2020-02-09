@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
-const CreateProfile = ({
+const EditProfile = ({
   createProfile,
   getCurrentProfile,
   profile: { profile, loading },
@@ -27,6 +27,27 @@ const CreateProfile = ({
 
   // useState set displaySocialInputs to false
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      company: loading || !profile.company ? "" : profile.company,
+      website: loading || !profile.website ? "" : profile.website,
+      location: loading || !profile.location ? "" : profile.location,
+      status: loading || !profile.status ? "" : profile.status,
+      skills: loading || !profile.skills ? "" : profile.skills.join(","),
+      githubusername:
+        loading || !profile.githubusername ? "" : profile.githubusername,
+      bio: loading || !profile.bio ? "" : profile.bio,
+      twitter: loading || !profile.social ? "" : profile.social.twitter,
+      facebook: loading || !profile.social ? "" : profile.social.facebook,
+      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+      youtube: loading || !profile.social ? "" : profile.social.youtube,
+      instagram: loading || !profile.social ? "" : profile.social.instagram
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]); //useEffect runs when it's loading
 
   const {
     company,
@@ -52,11 +73,6 @@ const CreateProfile = ({
     e.preventDefault();
     createProfile(formData, history);
   };
-
-  useEffect(() => {
-    getCurrentProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCurrentProfile]);
 
   // if has a profile, redirect to dashboard
   return loading && profile === null ? (
@@ -235,7 +251,7 @@ const CreateProfile = ({
   );
 };
 
-CreateProfile.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
@@ -244,5 +260,5 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(CreateProfile) //withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
+  withRouter(EditProfile) //withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
 );
