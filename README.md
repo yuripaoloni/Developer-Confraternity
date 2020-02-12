@@ -49,12 +49,12 @@ TBA
 
 ## Autori
 
-- **Yuri Paoloni** - [yuripaoloni](https://github.com/yuripaoloni)
-- **Matteo Leonesi** - [MatteoLeonesi](https://github.com/MatteoLeonesi)
+* **Yuri Paoloni** - [yuripaoloni](https://github.com/yuripaoloni)
+* **Matteo Leonesi** - [MatteoLeonesi](https://github.com/MatteoLeonesi)
 
 ## Versione
 
-
+1.0.0
 
 ## Licenza
 
