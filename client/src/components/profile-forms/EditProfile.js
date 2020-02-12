@@ -47,7 +47,7 @@ const EditProfile = ({
       instagram: loading || !profile.social ? "" : profile.social.instagram
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]); //useEffect runs when it's loading
+  }, [loading, getCurrentProfile]); //useEffect runs when it's loading
 
   const {
     company,
