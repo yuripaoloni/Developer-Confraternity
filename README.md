@@ -14,12 +14,47 @@ L’applicazione mette a disposizione le seguenti funzionalità:
 
 ## Get started
 
+Crea il file `default.json` nella cartella `config` ed inserisci i seguenti dati:
+
+```
+{
+  "mongoURI": "<your_mongoDB_Atlas_uri_with_credentials>",
+  "jwtSecret": "secret",
+  "githubToken": ""
+}
+```
+
+### Installa le dipendenze lato server
+
+```bash
+npm install
+```
+
+### Installa le dipendenze lato client
+
+```bash
+cd client
+npm install
+```
+
+### Esegui Express & React dalla root
+
+```bash
+npm run dev
+```
+
+### Build in production
+
 TBA
 
 ## Autori
 
 - **Yuri Paoloni** - [yuripaoloni](https://github.com/yuripaoloni)
 - **Matteo Leonesi** - [MatteoLeonesi](https://github.com/MatteoLeonesi)
+
+## Versione
+
+
 
 ## Licenza
 
