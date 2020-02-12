@@ -8,7 +8,6 @@ import {
   LOGOUT,
   ACCOUNT_DELETED
 } from "../actions/types";
-import { STATES } from "mongoose";
 
 const initialState = {
   token: localStorage.getItem("token"),
