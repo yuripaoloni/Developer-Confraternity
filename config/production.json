@@ -1,5 +1,0 @@
-{
-  "mongoURI": "mongodb://gSociety:QtM8drgltAvZqcP5@dev-social-app-shard-00-00-zothi.mongodb.net:27017,dev-social-app-shard-00-01-zothi.mongodb.net:27017,dev-social-app-shard-00-02-zothi.mongodb.net:27017/test?ssl=true&replicaSet=Dev-Social-App-shard-0&authSource=admin&retryWrites=true&w=majority",
-  "jwtSecret": "mySecretToken",
-  "githubToken": "737c772fde863016199a66cf1430f5239f46ce81"
-}
