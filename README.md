@@ -45,7 +45,10 @@ npm run dev
 
 ### Build in production
 
-TBA
+```bash
+cd client
+npm build
+```
 
 ## Autori
 
