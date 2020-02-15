@@ -12,7 +12,11 @@ L’applicazione mette a disposizione le seguenti funzionalità:
 * possibilità di scrivere nuovi post
 * possibilità di mettere mi piace e commentare i post altrui.
 
-## Get started
+#### È stato effettuato il deploy dell'applicazione su Heroku accessibile al seguente link: 
+
+https://calm-temple-42429.herokuapp.com/
+
+## Esecuzione in locale
 
 Crea il file `default.json` nella cartella `config` ed inserisci i seguenti dati:
 
