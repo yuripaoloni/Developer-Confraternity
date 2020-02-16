@@ -32,7 +32,7 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
-      // see if user  exist
+      // see if user exist
       let user = await User.findOne({ email });
 
       if (user) {
@@ -61,7 +61,7 @@ router.post(
 
       await user.save();
 
-      // return jsonwebtoken
+      // payload of JWT
       const payload = {
         user: {
           id: user.id
@@ -71,7 +71,7 @@ router.post(
       jwt.sign(
         payload,
         config.get("jwtSecret"),
-        { expiresIn: 360000 },
+        { expiresIn: 3600 },
         (err, token) => {
           if (err) throw err;
           res.json({ token });

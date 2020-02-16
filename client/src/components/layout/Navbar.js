@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  // the links that the navbar should show in case of authenticated user
   const authLinks = (
     <ul>
       <li>
@@ -28,6 +29,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </ul>
   );
 
+  // the links that the navbar should show in case of unauthenticated user
   const guestLinks = (
     <ul>
       <li>

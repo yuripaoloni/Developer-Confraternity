@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+// this component manage the display of alert messages
 const Alert = ({ alerts }) =>
   alerts !== null &&
   alerts.length > 0 &&

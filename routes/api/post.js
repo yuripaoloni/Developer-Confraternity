@@ -116,6 +116,7 @@ router.put("/like/:id", auth, async (req, res) => {
       return res.status(400).json({ msg: "Post already liked" });
     }
 
+    // add a new like at the beginning of likes array
     post.likes.unshift({ user: req.user.id });
 
     await post.save();
@@ -128,7 +129,7 @@ router.put("/like/:id", auth, async (req, res) => {
 });
 
 // @route   PUT api/posts/unlike/:id
-// @desc    Like a post
+// @desc    Unlike a post
 // @access  Private
 router.put("/unlike/:id", auth, async (req, res) => {
   try {
@@ -147,6 +148,7 @@ router.put("/unlike/:id", auth, async (req, res) => {
       .map(like => like.user.toString())
       .indexOf(req.user.id);
 
+    // removes one like at the removeIndex position
     post.likes.splice(removeIndex, 1);
 
     await post.save();
@@ -187,6 +189,7 @@ router.post(
         user: req.user.id
       });
 
+      // add a new comment at the beginning of comment array
       post.comments.unshift(newComment);
 
       await post.save();
@@ -225,6 +228,7 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
       .map(comment => comment.user.toString())
       .indexOf(req.user.id);
 
+    // remove one comment at the removeIndex position
     post.comments.splice(removeIndex, 1);
 
     await post.save();

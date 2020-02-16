@@ -24,7 +24,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      // We use "danger" to match with the app.css button color, obviously "success" also is an alertType
+      // We use "danger" to match with the app.css button color, obviously, for instance, "success" also is an alertType
       setAlert("Passwords do not match", "danger");
     } else {
       register({ name, email, password });
@@ -106,5 +106,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-// allow us to access props.setAlert and props.register
 export default connect(mapStateToProps, { setAlert, register })(Register);

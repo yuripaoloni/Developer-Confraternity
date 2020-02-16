@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 const PrivateRoute = ({
   component: Component,
   auth: { isAuthenticated, loading },
-  ...rest
+  ...rest //all the other props passed to this component, we used rest to avoid naming issue with the props passed to Route
 }) => (
   <Route
     {...rest}

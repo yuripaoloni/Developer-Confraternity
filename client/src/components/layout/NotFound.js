@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+// if none of the previous component is matched, this component is displayed
 const NotFound = () => {
   return (
     <Fragment>

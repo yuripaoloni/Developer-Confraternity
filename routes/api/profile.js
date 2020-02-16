@@ -30,7 +30,7 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-// @route   POST api/profile/
+// @route   POST api/profile
 // @desc    Create or update a user profile
 // @access  Private
 router.post(
@@ -162,6 +162,7 @@ router.delete("/", auth, async (req, res) => {
 
     // Remove user
     await User.findOneAndRemove({ _id: req.user.id });
+
     return res.json({ msg: "User deleted" });
   } catch (err) {
     console.error(err.message);
@@ -217,6 +218,7 @@ router.put(
     try {
       const profile = await Profile.findOne({ user: req.user.id });
 
+      // add a new experience at the beginning of experience array
       profile.experience.unshift(newExp);
 
       await profile.save();
@@ -241,6 +243,7 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
       .map(item => item.id)
       .indexOf(req.params.exp_id);
 
+    // remove one experience at the removeIndex position
     profile.experience.splice(removeIndex, 1);
 
     await profile.save();
@@ -303,6 +306,7 @@ router.put(
     try {
       const profile = await Profile.findOne({ user: req.user.id });
 
+      // add a new education at the beginning of the education array
       profile.education.unshift(newEdu);
 
       await profile.save();
@@ -327,6 +331,7 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
       .map(item => item.id)
       .indexOf(req.params.edu_id);
 
+    // remove an education at the removeIndex position
     profile.education.splice(removeIndex, 1);
 
     await profile.save();
